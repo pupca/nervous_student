@@ -1,0 +1,11 @@
+development:
+  sessions:
+    default:
+      hosts:
+        - localhost:1234
+      database: kos_development
+      username: root
+      password: password
+  options:
+      raise_not_found_error: false
+      allow_dynamic_fields: false

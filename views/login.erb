@@ -1,0 +1,15 @@
+ <div class="container">
+    <% if params[:error] %>
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Chyba!</strong> Přihlášení se nezdařilo. Možná jste zadali špatné heslo, nebo nemáte zapsané žádné předměty!
+    </div>
+    <% end %>
+    <form class="form-signin" action="/login" method="post">
+      <h2 class="form-signin-heading">Kos Login</h2>
+      <input type="text" class="input-block-level" placeholder="Uživatelské jméno" name="login">
+      <input type="password" class="input-block-level" placeholder="Heslo" name="password">
+      <button class="btn btn-large btn-primary" type="submit">Přihlásit</button>
+    </form>
+
+  </div>

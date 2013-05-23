@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nervous Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+  <link href="/bootstrap/css/bootstrapSwitch.css" rel="stylesheet" media="screen">
+  <link href="/bootstrap/css/custom.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+  <a href="https://github.com/pupca/nervous_student"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+  <div class="navbar navbar-inverse nav">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="/">Nervous Student</a>
+
+        <div class="nav-collapse collapse">
+          <% if current_user %>
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li><a href="/"><i class="icon-home icon-white"></i> Přehled předmětů</a></li>
+          </ul>
+          <% end %>
+          <% if current_user %>
+          <div class="pull-right">
+            <ul class="nav pull-right" style="padding-right: 100px;">
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.email %> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/settings"><i class="icon-cog"></i> Nastavení</a></li>
+                  <li><a href="/support"><i class="icon-envelope"></i> Kontakt</a></li>
+                  <li class="divider"></li>
+                  <li><a href="/logout"><i class="icon-off"></i> Odhlásit</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= yield %>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/bootstrap/js/bootstrapSwitch.js"></script>
+</body>
+</html>

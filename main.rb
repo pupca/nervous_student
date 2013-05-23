@@ -55,3 +55,4 @@ doc = Nokogiri::HTML(page.content)
 table = doc.at("table tr:nth-child(3) table table tr:nth-child(7) table")
 courses = []
 table.css("tr.tableRow1, tr.tableRow2").each {|course| courses << Course.new(course)}
+ap courses

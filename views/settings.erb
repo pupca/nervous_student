@@ -1,0 +1,56 @@
+ <div class="container">
+  <form class="form-horizontal" method="post">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Nastavení uživatele</legend>
+
+      <!-- Text input-->
+      <div class="control-group">
+        <label class="control-label">Email</label>
+        <div class="controls">
+          <input id="user[email]" name="user[email]" type="text" placeholder="" class="input-xlarge" required="" value="<%= current_user.email %>">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="control-group">
+        <label class="control-label">Mobil</label>
+        <div class="controls">
+          <input id="user[phone]" name="user[phone]" type="text" placeholder="" class="input-xlarge" value="<%= current_user.phone %>">
+
+        </div>
+      </div>
+
+      <!-- Multiple Checkboxes -->
+      <div class="control-group">
+        <label class="control-label">Notifikace</label>
+        <div class="controls">
+          <label class="checkbox">
+            <input type='hidden' name='user[email_notification]' value='false'>
+            <input type='checkbox' name='user[email_notification]' value='true' <%= current_user.email_notification ? "checked='checked'" : "" %>>
+            Emailem
+          </label>
+          <label class="checkbox">
+            <input type='hidden' name='user[phone_notification]' value='false'>
+            <input type='checkbox' name='user[phone_notification]' value='true' <%= current_user.phone_notification ? "checked='checked'" : "" %>>
+            Mobilem
+          </label>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="control-group">
+        <label class="control-label"></label>
+        <div class="controls">
+          <button id="submit" name="submit" class="btn btn-primary">Odeslat</button>
+        </div>
+      </div>
+      <input type="hidden" name="user[setup]" value="1">
+
+    </fieldset>
+  </form>
+
+
+</div>

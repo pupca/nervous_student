@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <% @courses.each do |semestr, courses| %>
+      <h2>Semestr: <%= semestr %></h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Název</th>
+            <th>Kreditů</th>
+            <th>Zakončení</th>
+            <th>Zápočet</th>
+            <th>Zkouška</th>
+            <th>Uzavřeno</th>
+            <th>Změněno</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% courses.each do |course| %>
+          <tr>
+            <td><%= course.title %></td>
+            <td><%= course.credits %></td>
+            <td><%= course.termination %></td>
+            <td><%= boolean_badge(course.zapocet) %></td>
+            <td><%= course.grade %></td>
+            <td><%= boolean_badge(course.finished) %></td>
+            <td><%= course.last_change %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <% end %>
+      <i>Naposledy byly známky aktualizovány <%= current_user.last_update.strftime("%d.%m.%Y v %H:%M") %></i>
+    </div>
+  </div>
+</div>

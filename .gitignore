@@ -1,0 +1,14 @@
+.bundle
+db/*.sqlite3
+log/
+tmp/**/*
+tmp/*.*
+config/database.yml
+config/mongoid.yml
+config/environments/development.rb
+system/
+.rvmrc
+.DS_Store
+*/.DS_Store
+public/assets/
+.sass-cache/
